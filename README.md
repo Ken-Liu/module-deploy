@@ -1,14 +1,23 @@
 # How to publish maodou tool as a npm package
 
-## change version of package.json
+* Change version of package.json
 
-##
+* Publish package
 ```
 npm publish
 ```
 
-## sudo npm install -g maodou
+* Install maodou package if you didn't install it
+```
+sudo npm install -g maodou
+```
 
-## sudo npm update -g maodou
+* Update maodou package if you already installed it
+```
+sudo npm update -g maodou
+```
 
-# maodou
+* Run maodou deploy tool
+```
+maodou
+```
