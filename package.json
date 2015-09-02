@@ -1,0 +1,13 @@
+{
+  "name": "maodou",
+  "version": "1.0.4",
+  "description": "Maodou meteor deploy tool",
+  "bin": {
+    "maodou": "./bin/maodou"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryan Wu <bryan@maodou.io>",
+  "license": "ISC"
+}
