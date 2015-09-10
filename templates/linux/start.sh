@@ -4,7 +4,8 @@ APPNAME=<%= appName %>
 APP_PATH=/opt/$APPNAME
 BUNDLE_PATH=$APP_PATH/current
 ENV_FILE=$APP_PATH/config/env.list
-PORT=<%= port %>
+PORT=8000
+APP_VIRTUAL_URL=<%= virtual_host %>
 USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
 
 # Remove previous version of the app, if exists
@@ -18,9 +19,10 @@ set +e
 docker pull meteorhacks/meteord:base
 set -e
 
-if [ "$USE_LOCAL_MONGO" == "1" ]; then
+if [ "$USE_LOCAL_MONGO" == "0" ]; then
   docker run \
     -d \
+    -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
     --restart=always \
     --publish=$PORT:80 \
     --volume=$BUNDLE_PATH:/bundle \
