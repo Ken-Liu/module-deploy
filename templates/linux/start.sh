@@ -4,7 +4,7 @@ APPNAME=<%= appName %>
 APP_PATH=/opt/$APPNAME
 BUNDLE_PATH=$APP_PATH/current
 ENV_FILE=$APP_PATH/config/env.list
-PORT=8000
+PORT=<%= meteor_container_port %>
 APP_VIRTUAL_URL=<%= virtual_host %>
 USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
 
