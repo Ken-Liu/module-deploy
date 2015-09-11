@@ -1,6 +1,6 @@
 {
   "name": "maodou",
-  "version": "0.9.14",
+  "version": "0.9.15",
   "description": "Maodou Meteor Deploy Tool",
   "dependencies": {
     "async": "^0.9.0",
