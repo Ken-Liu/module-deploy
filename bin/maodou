@@ -23,19 +23,14 @@ console.log('Settings file      : ' + settingsFileName);
 console.log('');
 
 var action = cliOptions._[0];
-if(action == 'init') {
-  //special setup for init
-  ActionsRegistry.init();
-} else {
-  var cwd = path.resolve('.');
-  //read config and validate it
-  var config = Config.read(configFileName);
-  var runOptions = {
-    settingsFileName: settingsFileName
+var cwd = path.resolve('.');
+//read config and validate it
+var config = Config.read(configFileName);
+var runOptions = {
+   settingsFileName: settingsFileName
   };
 
-  runActions(config, cwd, runOptions);
-}
+runActions(config, cwd, runOptions);
 
 function runActions(config, cwd, options) {
   var actionsRegistry = new ActionsRegistry(config, cwd, options);
