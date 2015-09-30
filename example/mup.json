@@ -2,12 +2,12 @@
   // Server authentication info
   "servers": [
     {
-      "host": "hostname",
+      "host": "52.89.117.84",
       "username": "root",
-      "password": "password",
+      "password": "987654321a",
       // or pem file (ssh based authentication)
       // WARNING: Keys protected by a passphrase are not supported
-      //"pem": "~/.ssh/id_rsa"
+      //"pem": "",
       // Also, for non-standard ssh port use this
       //"sshOptions": { "port" : 49154 },
       // server specific environment variables
@@ -16,21 +16,23 @@
   ],
 
   // Install MongoDB on the server. Does not destroy the local MongoDB on future setups
-  "setupMongo": true,
+  "setupMongo": false,
 
   // Application name (no spaces).
-  "appName": "meteor",
+  "appName": "Microduino",
 
   // Location of app (local directory). This can reference '~' as the users home directory.
   // i.e., "app": "~/Meteor/my-app",
   // This is the same as the line below.
-  "app": "/Users/arunoda/Meteor/my-app",
+  "app": "./",
 
+  "virtual_host":"52.89.117.84",
+  "meteor_container_port": 8000,
   // Configure environment
   // ROOT_URL must be set to your correct domain (https or http)
   "env": {
     "PORT": 80,
-    "ROOT_URL": "http://myapp.com"
+    "ROOT_URL": "http://52.89.117.84"
   },
 
   // Meteor Up checks if the app comes online just after the deployment.
