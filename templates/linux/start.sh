@@ -7,7 +7,7 @@ ENV_FILE=$APP_PATH/config/env.list
 PORT=<%= meteor_container_port %>
 APP_VIRTUAL_URL=<%= virtual_host %>
 USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
-MONGO_URL_COMPOSE=mongodb://root:Maodou123@lighthouse.4.mongolayer.com:10107,lighthouse.5.mongolayer.com:10107/microduino?replicaSet=set-560a098fb9d501241e000a0d
+MONGO_URL_COMPOSE=<%= mongodb_URL %>
 # Remove previous version of the app, if exists
 docker rm -f $APPNAME
 
