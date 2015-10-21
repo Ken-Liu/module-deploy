@@ -32,6 +32,7 @@ if [ "$USE_LOCAL_MONGO" == "1" ]; then
     --hostname="$HOSTNAME-$APPNAME" \
     --env=MONGO_URL=mongodb://mongodb:27017/$APPNAME \
     --name=$APPNAME \
+    -p 587:587
     liukunmcu/microduino:test
 else
   docker run \
@@ -44,6 +45,7 @@ else
     --hostname="$HOSTNAME-$APPNAME" \
     --env=MONGO_URL=$MONGO_URL_COMPOSE \
     --name=$APPNAME \
+    -p 587:587
     liukunmcu/microduino:test
 
 
