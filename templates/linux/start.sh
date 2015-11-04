@@ -3,6 +3,7 @@
 APPNAME=<%= appName %>
 CONFIGNAME=<%= configname %>
 CONFIG_PATH=/opt/$APPNAME/$CONFIGNAME
+INNERPORT=<%= innerport %>
 #ENV_FILE=$APP_PATH/config/env.list
 PORT=<%= meteor_container_port %>
 APP_VIRTUAL_URL=<%= virtual_host %>
@@ -24,7 +25,7 @@ set -e
     -d \
     -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
     --restart=always \
-    --publish=$PORT:80 \
+    --publish=$PORT:$INNERPORT \
     --volume=$CONFIG_PATH:/app/$CONFIGNAME \
     --name=$APPNAME \
     liukunmcu/microduino-wiki

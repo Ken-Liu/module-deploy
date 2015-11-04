@@ -21,6 +21,7 @@
   // Application name (no spaces).
   "appName": "Wiki",
   "configname": "config.yaml",
+  "innerport":  6067,
 
   // Location of app (local directory). This can reference '~' as the users home directory.
   // i.e., "app": "~/Meteor/my-app",
