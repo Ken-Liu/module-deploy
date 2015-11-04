@@ -1,5 +1,5 @@
 #!/bin/bash
-
+APPNAME=<%= appName %>
 revert_app (){
   if [[ -d old_app ]]; then
     sudo rm -rf app
@@ -17,6 +17,7 @@ revert_app (){
 
 set -e
 
+APP_DIR=/opt/<%=appName %>
 
 
 # We temporarly stopped the binary building
@@ -42,4 +43,4 @@ set -e
 # cd ..
 
 # start app
-sudo bash ./start.sh
+sudo bash $APP_DIR/start.sh
