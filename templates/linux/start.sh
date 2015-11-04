@@ -15,7 +15,7 @@ docker rm -f $APPNAME-frontend
 
 # We don't need to fail the deployment because of a docker hub downtime
 set +e
-#docker pull meteorhacks/meteord:base
+docker pull liukunmcu/microduino-wiki:latest
 set -e
 
 
@@ -26,7 +26,6 @@ set -e
     --restart=always \
     --publish=$PORT:80 \
     --volume=$CONFIG_PATH:/app/$CONFIGNAME \
-    --env=MONGO_URL=$MONGO_URL_COMPOSE \
     --name=$APPNAME \
     liukunmcu/microduino-wiki
 
