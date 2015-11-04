@@ -1,7 +1,7 @@
 {
-  "name": "maodou",
-  "version": "0.9.31",
-  "description": "Maodou Meteor Deploy Tool",
+  "name": "module-deploy",
+  "version": "0.0.1",
+  "description": "module-deploy Deploy Tool",
   "dependencies": {
     "async": "^0.9.0",
     "cjson": "0.3.x",
@@ -15,12 +15,12 @@
     "minimist": "1.1.1"
   },
   "bin": {
-    "maodou": "./bin/maodou"
+    "maodou": "./bin/module-deploy"
   },
-  "author": "Bryan Wu <bryan@maodou.io>",
+  "author": "liukunmcu <lkmcudevelope@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:maodouio/maodou.git"
+    "url": ""
   },
   "license": "MIT"
 }

@@ -1,13 +1,12 @@
 #!/bin/bash
 
 APPNAME=<%= appName %>
-APP_PATH=/opt/$APPNAME
-BUNDLE_PATH=$APP_PATH/current
-ENV_FILE=$APP_PATH/config/env.list
+CONFIGNAME=<%= configname %>
+CONFIG_PATH=/opt/$APPNAME/$CONFIGNAME
+#ENV_FILE=$APP_PATH/config/env.list
 PORT=<%= meteor_container_port %>
 APP_VIRTUAL_URL=<%= virtual_host %>
-USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
-MONGO_URL_COMPOSE=<%= mongodb_URL %>
+
 # Remove previous version of the app, if exists
 docker rm -f $APPNAME
 
@@ -20,42 +19,18 @@ set +e
 set -e
 
 
-if [ "$USE_LOCAL_MONGO" == "1" ]; then
+
   docker run \
     -d \
     -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
     --restart=always \
     --publish=$PORT:80 \
-    --volume=$BUNDLE_PATH:/bundle \
-    --env-file=$ENV_FILE \
-    --link=mongodb:mongodb \
-    --hostname="$HOSTNAME-$APPNAME" \
-    --env=MONGO_URL=mongodb://mongodb:27017/$APPNAME \
-    --name=$APPNAME \
-    -p 587:587 \
-    liukunmcu/microduino:test
-else
-  docker run \
-    -d \
-    -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
-    --restart=always \
-    --publish=$PORT:80 \
-    --volume=$BUNDLE_PATH:/bundle \
-    --env-file=$ENV_FILE \
-    --hostname="$HOSTNAME-$APPNAME" \
+    --volume=$CONFIG_PATH:/app/$CONFIGNAME \
     --env=MONGO_URL=$MONGO_URL_COMPOSE \
     --name=$APPNAME \
-    -p 587:587 \
-    liukunmcu/microduino:test
+    liukunmcu/microduino-wiki
 
 
-
-
-
-
-
-
-fi
 
 <% if(typeof sslConfig === "object")  { %>
   # We don't need to fail the deployment because of a docker hub downtime
