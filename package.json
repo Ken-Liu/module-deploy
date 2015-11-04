@@ -15,12 +15,12 @@
     "minimist": "1.1.1"
   },
   "bin": {
-    "maodou": "./bin/module-deploy"
+    "module-deploy": "./bin/module-deploy"
   },
   "author": "liukunmcu <lkmcudevelope@gmail.com>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Ken-Liu/module-deploy"
   },
   "license": "MIT"
 }
